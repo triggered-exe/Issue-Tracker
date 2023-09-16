@@ -1,0 +1,109 @@
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/css/project.css">
+
+<!-- Create Issue Modal -->
+<div id="createIssueModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Create Issue</h2>
+        <form id="issueForm" action="/project/create-issue/<%=project._id %>" method="post">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="issueTitle" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="issueDescription" rows="4" required></textarea>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="issueAuthor" required>
+
+            <label for="labels" >Labels (Select Multiple): </label>
+             <select id="multiple-select" name="issueLabels"  multiple required>
+                    <option value="Development">Development</option>
+                    <option value="bugs">bugs</option>
+                    <option value="Production">Production</option>
+                    <option value="Security">Security</option>
+            </select>           
+
+            <button type="submit">Create</button>
+        </form>
+    </div>
+</div>
+
+<section class="project-details">
+    
+    <div class="project-title">
+        <h3><%= project.name %></h3>
+    </div>
+    <div class="project-description">
+        <p><b>Description:</b> <%= project.description %></p>
+    </div>
+    <div class="project-author">
+        <p><b>Author:</b> <%= project.author %></p>
+    </div>
+    
+    <button id="openCreateIssueModal">Create Issue</button>
+</section>
+
+<section class="issues">
+
+<!-- Filter Section -->
+<section class="filter-section">
+    <h2>ISSUES</h2>
+    <form id="filterForm" action="/filter-issues" method="post">
+        <div class="filter-row">
+
+            <div class="filter-label">
+                <label for="filterLabels">Labels:</label>
+                <select id="filterLabels" name="filterLabels[]" multiple class="js-select2">
+                    <option value="Development">Development</option>
+                    <option value="bugs">bugs</option>
+                    <option value="Production">Production</option>
+                    <option value="Security">Security</option>
+                </select>
+            </div>
+
+            <div class="filter-title">
+                <label for="filterTitle">Title:</label>
+                <input type="text" id="filterTitle" name="filterTitle">
+            </div>
+
+            <div class="filter-description">
+                <label for="filterDescription">Description:</label>
+                <input type="text" id="filterDescription" name="filterDescription">
+            </div>
+
+            <div class="filter-button">
+                <button type="submit" id="filter-button">Apply Filters</button>
+            </div>
+        </div>
+    </form>
+</section>
+
+
+<!--    -----------------------------------------------------         -->
+    <ul id="issueList">
+        <% issues.forEach(function(issue) { %>
+            <li>
+                <h3><b>Title: </b><%= issue.title %></h3>
+                <p><b>Description: </b><%= issue.description %></p>
+                <p><b>Author: </b><%= issue.description %></p>
+                <!-- Add more issue details here -->
+            </li>
+        <% }); %>
+    </ul>
+</section>
+
+<script>
+    
+    var issues = <%- JSON.stringify(issues) %>;
+    
+</script>
+<!-- Add jQuery (required by Select2) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Add Select2 JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="/js/project.js"></script>
+<script src="/js/filter-issues.js"></script>
+

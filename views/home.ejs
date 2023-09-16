@@ -1,0 +1,43 @@
+<main>
+        <!-- Modal for creating a project (initially hidden) -->
+        <div id="create-project-modal" class="modal">
+            <div class="modal-content">
+                <!-- Form for creating a new project goes here -->
+                <form id="project-form" action="/project/create-project" method="post">
+                    <!-- Project details input fields -->
+                    <label for="projectName">Project Name:</label>
+                    <input type="text" id="projectName" name="projectName" required>
+    
+                    <label for="projectDescription">Description:</label>
+                    <textarea id="projectDescription" name="projectDescription" rows="4" required></textarea>
+
+                    <label for="projectAuthor">Author:</label>
+                    <input type="text" id="projectAuthor" name="projectAuthor" required>
+
+    
+                    <!-- Additional input fields for project details -->
+    
+                   <button type="submit" >Create Project</button>
+                </form>
+    
+                <!-- Close button -->
+                <span id="close-create-project-modal" class="close">&times;</span>
+            </div>
+        </div>
+    
+    
+
+    <h2>List of Projects</h2>
+    <ul class="project-list">
+        <% projects.forEach((project) => { %>
+            <li>
+                <h3><%= project.name %></h3>
+                <p><b>Description :</b> <%= project.description %></p>
+                <p><b>Author:</b> <%= project.author %></p>
+                <a href="/project/open-project/<%=project._id %>"><input class="open-project" type="submit" value="open project"></a>
+            </li>
+        <% }); %>
+    </ul>
+</main>
+
+<script src="/js/home.js"></script>

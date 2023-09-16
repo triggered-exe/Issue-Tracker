@@ -1,0 +1,217 @@
+.project-details, .issues {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    background-color: #7e777715;
+    border-radius: 5px;
+}
+
+.project-title {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.project-description, .project-author {
+    margin-top: 10px;
+}
+
+.project-details button {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Adjust the right spacing as needed */
+    transform: translateY(-50%);
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 100px;
+}
+
+
+
+/* project.css */
+
+/* Style the filter section */
+.filter-section {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    
+}
+
+/* Style the filter row to display elements in a single line */
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribute available space between elements */
+    align-items: center; /* Vertically center align filter elements */
+}
+
+/* Style individual filter elements */
+.filter-label,
+.filter-title,
+.filter-description {
+    flex: 2; /* Distribute available space equally among elements */
+    margin-right: 10px; /* Add margin between elements */
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    position: relative;
+}
+
+#filterLabels  {
+    background-color: red;
+    height: 20px;
+    overflow: hidden;
+    
+}
+
+.filter-button{
+    flex: 1;
+}
+
+
+/* Style the dropdown and input elements */
+.filter-row select,
+input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid rgba(139, 138, 138, 0.925);
+    border-radius: 5px;
+    height: 26px;
+}
+.filter-row select,
+input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid rgba(192, 178, 178, 0.87);
+    border-radius: 5px;
+    
+}
+
+.filter-button {
+    position: relative;
+}
+
+/* Style the Apply Filters button */
+.filter-button button[type="submit"] {
+    
+    cursor: pointer;
+    height: 34px;
+    position: absolute;
+    bottom: -35px;
+    font-size: 0.7rem;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    line-height: 0;
+    
+}
+
+/* Additional styles for the button on hover */
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    ;
+}
+
+
+/* add styling to the issue list inside ul */
+
+#issueList li {
+    list-style: none;
+    margin: 5px 0px;
+    margin-left: -37px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+#issueList li:nth-child(odd) {
+   background-color: #6b6b6b33;
+}
+
+#issueList li:nth-child(even) {
+   background-color: #80839617;
+}
+
+
+
+/* modal.css */
+
+/* The Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Style the form inputs, labels, and button as needed */
+.modal-content  label {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    margin: 10px 0px;
+}
+.modal-content textarea {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+   
+}
+
+
+
+
+/* Additional styles for the submit button */
+.modal-content button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Additional styles for the submit button on hover */
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}

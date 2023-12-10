@@ -11,7 +11,7 @@ const path = require('path');
 const expressLayouts = require('express-ejs-layouts');
 
 app.use(express.urlencoded());
-app.use(express.static('assets'));
+app.use(express.static(path.join(__dirname, 'assets')));
 
 app.use(expressLayouts);
 

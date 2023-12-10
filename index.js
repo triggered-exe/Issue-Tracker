@@ -21,7 +21,7 @@ app.set('layout extractScripts', true);
 
 // set up the view engine
 app.set('view engine', 'ejs');
-app.set('views', './views');
+app.set('views', path.join(__dirname, 'views'));
 
 // use express router
 app.use('/', require('./routes'));
